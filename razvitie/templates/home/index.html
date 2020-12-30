@@ -1,0 +1,1539 @@
+{% load static %}
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU">
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--IE Compatibility Meta-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="{{ meta_description }}">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Fonts
+============================================= -->
+<link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
+<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700%7CRaleway:100,200,300,400,500,600,700,800%7CDroid+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+<!-- Stylesheets
+============================================= -->
+<!-- Extrnal CSS -->
+<link rel="stylesheet" href="{% static 'css/external.css' %}" >
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" >
+
+<!-- Style CSS -->
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <!-- Resolution Extension Stylesheets -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/settings.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/layers.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/navigation.css' %}">
+
+    <!-- Cropper -->
+<link rel="stylesheet" href="{% static 'css/cropper.css' %}">
+<script src="{% static 'js/cropper.js' %}"></script>
+    <script type="text/javascript">
+        ///////// ENABLING 'pattern' attribute
+        $( document ).ready( function() {
+            var errorMessage = "Please match the requested format.";
+            $( this ).find( "textarea" ).on( "input change propertychange", function() {
+                var pattern = $( this ).attr( "pattern2" );
+                if(typeof pattern !== typeof undefined && pattern !== false) {
+                    var patternRegex = new RegExp('^' + pattern.replace(/^\^|\$$/g, '') + '$', 'gm');
+                    hasError = !$( this ).val().match( patternRegex );
+                    if ( typeof this.setCustomValidity === "function") {
+                        this.setCustomValidity( hasError ? errorMessage : "" );
+                    } else {
+                        $( this ).toggleClass( "error", !!hasError );
+                        $( this ).toggleClass( "ok", !hasError );
+                        if ( hasError )
+                        { $( this ).attr( "title", errorMessage );
+                        } else {
+                            $( this ).removeAttr( "title" );
+                        }
+                    }
+                }
+
+            });
+        });
+    </script>
+
+
+
+<!-- Document Title
+    ============================================= -->
+<title> {{ title_develop }}</title>
+<link rel="icon" href="{% static "images/favicon/favicon.ico" %}" type="image/ico" />
+<link rel="shortcut icon" href="{% static "images/favicon/favicon.ico" %}" type="image/ico" />
+</head>
+<body>
+<div class="preloader">
+	<div class="spinner">
+		<div class="bounce1">
+		</div>
+		<div class="bounce2">
+		</div>
+		<div class="bounce3">
+		</div>
+	</div>
+</div>
+<header id="navbar-spy" class="transparent-header header-9">
+	<nav id="primary-menu" class="navbar navbar-fixed-top style-1">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Переключить навигацию</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+
+
+                <div class="inline-flex-wrapper">
+                    <a class="logo" href="index.html">
+                        <img src="{% static "images/logo/logo.svg" %}"  height="93" alt="Развитие">
+                    </a>
+
+                    <div class="widget-social-icon pull-right text-right pull-none-xs social-up">
+                    <a href="https://wa.link/6ypiq2" target="_blank"> <i class="fab fa-whatsapp" ></i> <i class="fab fa-whatsapp"></i></a>
+                    <a href="https://instagram.com/razvitiye23?igshid=lmzh6v3qjcfa" target="_blank">
+                        <i class="fab fa-instagram"></i> <i class="fab fa-instagram"></i></a>
+
+                    <a href="https://xn--r1a.click/razvitiye23" target="_blank"><i class="fab fa-telegram"></i> <i class="fab fa-telegram"></i></a>
+                </div>
+                </div>
+
+			</div>
+			
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-left">
+					<li>
+						<a data-scroll="scrollTo" href="#hero">Главная</a>
+					</li>
+					<li>
+						<a data-scroll="scrollTo" href="#shotcode-1">Почему мы?</a>
+					</li>
+					<li>
+						<a data-scroll="scrollTo" href="#service-6">Услуги</a>
+					</li>
+					<li>
+						<a data-scroll="scrollTo" href="#projects">Проекты</a>
+					</li>
+                    <li>
+						<a data-scroll="scrollTo" href="#shortcode-7">Принципы</a>
+					</li>
+					<li>
+						<a data-scroll="scrollTo" href="#testimonials">Отзывы</a>
+					</li>
+
+					<li>
+						<a data-scroll="scrollTo" href="#cta-6">Контакты</a>
+					</li>
+				</ul>
+				
+				<!-- Mod-->
+				<div class="module module-quote pull-left">
+					<a class="button-quote" href="#" data-toggle="modal" data-target="#hmodel-quote2" id="hmodelquote2">Написать</a>
+				<!-- Modal -->
+				<div class="modal fade model-quote" id="hmodel-quote2" tabindex="-1" role="dialog" aria-labelledby="hmodelquote2">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+								</button>
+								<div class="model-icon">
+									<i class="lnr lnr-apartment"></i>
+								</div>
+								<div class="model-divider">
+									<div class="model-title">
+										<p>Мы вам поможем</p>
+										<h6>Оставьте заявку!</h6>
+									</div>
+								</div>
+							</div>
+							<!-- .model-header end -->
+							<div class="modal-body">
+								<form id="head-quote-form" action="{% url 'email' %}" method="POST">
+                                    {% csrf_token %}
+                                            <input type="text" pattern='^[A-Za-zА-Яа-яЁё".,?!:;()-_\s]*$'  class="form-control" name="name" id="quote-name" placeholder="ФИО:" required/>
+                                            <input type="email" class="form-control" name="email" id="quote-email" placeholder="Email:" required/>
+                                            <input type="tel" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" class="form-control" name="phone" id="quote-telephone" placeholder="Номер телефона: +7(9xx)xxx-xx-xx" required/>
+                                            <input type="text" pattern='^[A-Za-zА-Яа-яЁё".,?!:;()-_\s]*$' class="form-control mb-30" name="subject" id="subject" placeholder='Тема: "Ищу работу/сотрудника"' required/>
+                                            <textarea class="form-control" pattern='^[A-Za-zА-Яа-яЁё".,?!:;()-_\s]*$' name="message"  id="quote-message" placeholder="Ваше сообщение:" rows="2" required></textarea>
+                                            <button type="submit" class="btn btn-primary btn-black btn-block">Отправить</button>
+								</form>
+							</div>
+							<!-- .model-body end -->
+						</div>
+					</div>
+				</div>
+				<!-- .model-quote end -->
+				</div>
+
+
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+</header>
+
+
+<section id="hero" class="hero">
+	
+	<!-- START REVOLUTION SLIDER 5.0 -->
+	<div class="rev_slider_wrapper">
+		<div id="slider1" class="rev_slider"  data-version="5.0">
+			<ul>
+				<!-- slide 1 -->
+				<li data-transition="zoomout" data-slotamount="default"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000" style="background-color: rgba(34, 34, 34, 0.3);">
+					<!-- MAIN IMAGE -->
+					<img src="{% static 'images/banner/banner1.jpg' %}"  alt=""  width="1920" height="1280">
+					<!-- LAYER NR. 1 -->
+					<div class="tp-caption" 
+						data-x="center" data-hoffset="0" 
+						data-y="center" data-voffset="-50" 
+						data-whitespace="nowrap"
+						data-width="none"
+						data-height="none"
+						data-transform_idle="o:1;"
+						data-transform_in="x:50px;opacity:0;s:1000;e:Power3.easeOut;" 
+						data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" 
+						data-start="500" 
+						data-splitin="none" 
+						data-splitout="none" 
+						data-responsive_offset="on"
+						data-fontsize="['17','17','15','15']"
+						data-lineheight="['45','45','25','25']"
+						data-fontweight="['600','500','600','300']"
+						data-color="#fff" style="font-family: raleway">
+						Добро пожаловать
+					</div>
+					
+					<!-- LAYER NR. 2 -->
+					<div class="tp-caption text-uppercase color-theme" 
+						data-x="center" data-hoffset="0" 
+						data-y="center" data-voffset="0" 
+						data-whitespace="nowrap"
+						data-width="none"
+						data-height="none"
+						data-transform_idle="o:1;"
+						data-transform_in="y:-50px;opacity:0;s:1500;e:Power3.easeOut;" 
+						data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" 
+						data-start="1750" 
+						data-splitin="none" 
+						data-splitout="none" 
+						data-responsive_offset="on"
+						data-fontsize="['55','17','15','15']"
+						data-lineheight="['50','45','25','25']"
+						data-fontweight="['700','500','600','300']"
+						data-color="#f7ea53" style="font-family: montserrat; "
+						>
+						<h1 style="color:#f7ea53; font-size:55px">Кадровое агентство РАЗВИТИЕ</h1>
+					</div>
+					
+					<!-- LAYER NR. 3 -->
+					<div class="tp-caption" 
+						data-x="center" data-hoffset="0" 
+						data-y="center" data-voffset="70" 
+						data-width="none"
+						data-height="none"
+						data-transform_idle="o:1;"
+						data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
+						data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
+						data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" 
+						data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" 
+						data-start="2000" 
+						data-splitin="none" 
+						data-splitout="none" 
+						data-responsive_offset="on"
+						data-fontsize="['17','17','17','17']"
+						data-lineheight="['26','26','25','25']"
+						data-fontweight="['700','500','500','500']"
+						data-color="#fff" style="font-family: raleway; text-align:center"
+						>
+						специализирующееся на подборе персонала  <br/>
+
+					</div>
+					
+					<!-- LAYER NR. 4 -->
+					<div class="tp-caption" 
+						id="slide-163-layer-6" 
+						data-x="center" data-hoffset="0" 
+						data-y="center" data-voffset="160" 
+						data-width="none"
+						data-height="none"
+						data-whitespace="nowrap"
+						data-transform_idle="o:1;"
+						data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power3.easeOut;"
+						data-style_hover="c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);"
+						data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
+						data-transform_out="y:[175%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
+						data-mask_out="x:inherit;y:inherit;" 
+						data-start="2500" 
+						data-splitin="none" 
+						data-splitout="none" 
+						data-actions='[{"event":"click","action":"jumptoslide","slide":"rs-164","delay":""}]'
+						data-basealign="slide" 
+						data-responsive_offset="on" 
+						data-responsive="off">
+
+					</div>
+				</li>
+				
+				<!-- slide 2 -->
+				<li data-transition="scaledownfromright" data-slotamount="default"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000">
+					<!-- MAIN IMAGE -->
+					<img src="{% static "images/banner/banner2.jpg" %}"  alt="Кран"  width="1920" height="1280">
+					<!-- LAYER NR. 1 -->
+					<div class="tp-caption" 
+						data-x="center" data-hoffset="0" 
+						data-y="center" data-voffset="-50" 
+						data-width="none"
+						data-height="none"
+						data-transform_idle="o:1;"
+						data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power3.easeInOut;" 
+						data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" 
+						data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" 
+						data-start="1000" 
+						data-splitin="none" 
+						data-splitout="none" 
+						data-responsive_offset="on"
+						data-fontsize="['17','17','15','15']"
+						data-lineheight="['45','45','25','25']"
+						data-fontweight="['600','500','600','300']"
+						data-color="#fff" style="font-family: raleway" >
+						Кого мы находим?
+					</div>
+					
+					<!-- LAYER NR. 2 -->
+					<div class="tp-caption text-uppercase color-theme" 
+						data-x="center" data-hoffset="0" 
+						data-y="center" data-voffset="0" 
+						data-whitespace="nowrap"
+						data-width="none"
+						data-height="none"
+						data-transform_idle="o:1;"
+						data-transform_in="x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;" 
+						data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" 
+						data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" 
+						data-start="1500" 
+						data-splitin="none" 
+						data-splitout="none" 
+						data-responsive_offset="on"
+						data-fontsize="['55','17','15','15']"
+						data-lineheight="['50','45','25','25']"
+						data-fontweight="['700','500','600','300']"
+						data-color="#f7ea53" style="font-family: montserrat; ">
+						Только ценные кадры
+					</div>
+					
+					<!-- LAYER NR. 3 -->
+					<div class="tp-caption" 
+						data-x="center" data-hoffset="0" 
+						data-y="center" data-voffset="70" 
+						data-width="none"
+						data-height="none"
+						data-transform_idle="o:1;"
+						data-transform_in="x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;" 
+						data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" 
+						data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" 
+						data-start="2000" 
+						data-splitin="none" 
+						data-splitout="none" 
+						data-responsive_offset="on"
+						data-fontsize="['17','17','17','17']"
+						data-lineheight="['26','26','25','25']"
+						data-fontweight="['700','500','500','500']"
+						data-color="#fff" style="font-family: raleway; text-align:center">
+						Поиск, подбор и отбор персонала высшего и среднего звена  <br>
+                        в строительной отрасли
+					</div>
+					
+					<!-- LAYER NR. 4 -->
+					<div class="tp-caption" 
+						data-x="center" data-hoffset="0" 
+						data-y="center" data-voffset="160"  
+						data-width="none"
+						data-height="none"
+						data-transform_idle="o:1;"
+						data-transform_in="z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;s:1000;e:Power2.easeOut;" 
+						data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" 
+						data-start="2500" 
+						data-splitin="none" 
+						data-splitout="none" 
+						data-responsive_offset="on">
+					</div>
+				</li>
+				
+				<!-- slide 3 -->
+				<li data-index='rs-367' data-transition='fadetotopfadefrombottom' data-slotamount='default' data-easein='default' data-easeout='default' data-masterspeed='default'>
+					<!-- MAIN IMAGE -->
+					<img src="{% static "images/banner/banner3.jpg" %}"  alt=""  width="1920" height="1280">
+					<!-- LAYER NR. 1 -->
+					<div class="tp-caption" 
+						data-x="center" data-hoffset="0" 
+						data-y="center" data-voffset="-50" 
+						data-width="none"
+						data-height="none"
+						data-transform_idle="o:1;"
+						data-transform_in="y:-30px;rX:70deg;opacity:0;s:2000;e:Power4.easeInOut;" 
+						data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
+						data-start="1000" 
+						data-splitin="none" 
+						data-splitout="none" 
+						data-responsive_offset="on" 
+						data-fontsize="['17','17','15','15']"
+						data-lineheight="['45','45','25','25']"
+						data-fontweight="['600','500','600','300']"
+						data-color="#fff" style="font-family: raleway">
+						Нам с вами по пути!
+					</div>
+					
+					<!-- LAYER NR. 2 -->
+					<div class="tp-caption text-uppercase color-theme" 
+						data-x="center" data-hoffset="0" 
+						data-y="center" data-voffset="0" 
+						data-whitespace="nowrap"
+						data-width="['auto','auto','auto','auto']"
+						data-height="['auto','auto','auto','auto']"
+						data-transform_idle="o:1;"
+						data-transform_in="x:[-105%];z:0;rX:0deg;rY:0deg;rZ:-90deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;" 
+						data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
+						data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" 
+						data-start="2000" 
+						data-splitin="chars" 
+						data-splitout="none" 
+						data-responsive_offset="on" 
+						data-elementdelay="0.05" data-fontsize="['55','17','15','15']"
+						data-lineheight="['50','45','25','25']"
+						data-fontweight="['700','500','600','300']"
+						data-color="#f7ea53" style="font-family: montserrat; ">
+						С нами развиваются профессионалы
+					</div>
+					
+					<!-- LAYER NR. 3 -->
+					<div class="tp-caption" 
+						data-x="center" data-hoffset="0" 
+						data-y="center" data-voffset="70" 
+						data-width="none"
+						data-height="none"
+						data-transform_idle="o:1;"
+						data-transform_in="x:-50px;skX:100px;opacity:0;s:2000;e:Power4.easeInOut;" 
+						data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
+						data-start="4810" 
+						data-splitin="none" 
+						data-splitout="none" 
+						data-responsive_offset="on"
+						data-fontsize="['17','17','17','17']"
+						data-lineheight="['26','26','25','25']"
+						data-fontweight="['700','500','500','500']"
+						data-color="#fff" style="font-family: raleway ;text-align:center">
+						В нашей базе более 15000 опытных и квалифицированных специалистов в строительной сфере
+					</div>
+					
+					<!-- LAYER NR. 4 -->
+					<div class="tp-caption" 
+						data-x="center" data-hoffset="0" 
+						data-y="center" data-voffset="160"  
+						data-width="none"
+						data-height="none"
+						data-transform_idle="o:1;"
+						data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
+						data-style_hover="c:rgba(255, 255, 255, 1.00);bg:rgba(41, 46, 49, 0);bc:rgba(255, 255, 255, 1.00);cursor:pointer;"
+						data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
+						data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
+						data-start="5670" 
+						data-splitin="none" 
+						data-splitout="none" 
+						data-actions='[{"event":"click","action":"jumptoslide","slide":"next","delay":""}]'
+						data-responsive_offset="on" 
+						data-responsive="off">
+
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!-- END REVOLUTION SLIDER -->
+	</div>
+	<!-- END OF SLIDER WRAPPER -->
+</section>
+<!-- #hero end -->
+
+<!-- Shortcode #1 
+============================================= -->
+<section id="shotcode-1" class="shotcode-1 text-center-xs text-center-sm">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12">
+						<div class="heading heading-4">
+							<div class="heading-bg heading-right">
+								<p class="mb-0">О кадровом агентстве</p>
+								<h2>О нас</h2>
+							</div>
+						</div>
+						<!-- .heading end -->
+					</div>
+				</div>
+			</div>
+			<!-- .col-md-12 end -->
+			<div class="col-xs-12 col-sm-12 col-md-6">
+				<h3 class="color-heading mb-sm font-18">Кадровое агентство "РАЗВИТИЕ" является одной из лидирующих в Краснодарском крае в строительной отрасли</h3>
+				<p class="mb-60">С момента основания агентства помогли огромному количеству людей найти достойную работу, которая в скором времени привела их
+                    к быстрому росту по карьерной лестнице, а компаниям редких и ценных кдров, по причине которых улучшились бизнес-процессы компаний.
+                    Мы осуществляем поиск, подбор и отбор персонала высшего и среднего звена в строительной отрасли. В нашей обширной базе кандидатов,
+                    накопленной в результате многолетней работы в сфере подбора персонала, более 15000 опытных и квалифицированных специалистов
+                    в строительной сфере.
+                        </p>
+				<a class="btn btn-secondary mb-30-xs" href="#service-6">Наши услуги</a>
+			</div>
+			<!-- .col-md-6 end -->
+			<div class="col-xs-12 col-sm-12 col-md-6">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-md-6 feature feature-1">
+						<div class="feature-icon">
+							<i class="lnr lnr-calendar-full"></i>
+						</div>
+						<h4 class="text-uppercase">Всегда доступны</h4>
+						<p>Мы работаем с 8<sup>00</sup> - 20<sup>00</sup> без выходных.</p>
+					</div>
+					<!-- .col-md-6 end -->
+					<div class="col-xs-12 col-sm-6 col-md-6 feature feature-1">
+						<div class="feature-icon">
+							<i class="lnr lnr-briefcase"></i>
+						</div>
+						<h4 class="text-uppercase">Опытные кадры</h4>
+						<p>От подсобного рабочего до руководителей высшего звена.</p>
+					</div>
+					<!-- .col-md-6 end -->
+					<div class="col-xs-12 col-sm-6 col-md-6 feature feature-1 mb-0">
+						<div class="feature-icon">
+							<i class="lnr lnr-database"></i>
+						</div>
+						<h4 class="text-uppercase">Без предоплаты</h4>
+						<p>Мы работаем без предоплаты и гарантируем оперативный подбор опытных кадров</p>
+					</div>
+					<!-- .col-md-6 end -->
+					<div class="col-xs-12 col-sm-6 col-md-6 feature  feature-1 mb-0">
+						<div class="feature-icon">
+							<i class="lnr lnr-gift"></i>
+						</div>
+						<h4 class="text-uppercase">50% Скидка</h4>
+						<p>На подбор первых 5 сотрудников и в последующем на каждого  5-го  сотрудника</p>
+					</div>
+				</div>
+				<!-- .row end -->
+			</div>
+			<!-- .col-md-6 end -->
+		</div>
+		<!-- .row end -->
+	</div>
+	<!-- .container end -->
+</section>
+<hr/>
+<!-- Shortcode #4
+============================================= -->
+<section id="shortcode-4" class="shortcode-4">
+	<div class="container text-center">
+		<div class="row">
+			
+			<!-- Section Body
+			============================================= -->
+			<div class="col-xs-12 col-sm-3 col-md-3">
+				<div class="facts-box">
+					<div class="counter">
+						15000
+					</div>
+					<h4 class="text-uppercase">опытных и квалифицированных специалистов</h4>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-3 col-md-3">
+				<div class="facts-box">
+					<div class="counter">
+						1325
+					</div>
+					<h4 class="text-uppercase">нанятых компаниями сотрудников</h4>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-3 col-md-3">
+				<div class="facts-box">
+					<div class="counter">
+						15
+					</div>
+					<h4 class="text-uppercase">Выигранных наград</h4>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-3 col-md-3">
+				<div class="facts-box last">
+					<div class="counter">
+						2314
+					</div>
+					<h4 class="text-uppercase">Счастливых клиентов</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Service Block #6
+============================================= -->
+<section id="service-6" class="service service-6 pt-0 pb-0">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-6 col-img">
+				<div class="col-bg">
+					<img src="{% static "images/services/service1.jpg" %}" alt="Background"/>
+				</div>
+				<div class="heading heading-4">
+					<div class="heading-bg heading-right">
+						<p class="mb-0">Что мы умеем ?</p>
+						<h2>Наши услуги</h2>
+					</div>
+				</div>
+				<!-- .heading end -->
+			</div>
+			<!-- .col-md-6 end -->
+			<div class="col-xs-12 col-sm-12 col-md-6 col-content">
+				<div class="row pr-sm">
+					<!--- service block #1 -->
+					<div class="col-xs-12 col-sm-6 col-md-6 service-block">
+						<div class="service-icon">
+							<img src="{% static "images/services/icons/approval.png" %}" alt="icon" width="48"/>
+						</div>
+						<div class="service-content">
+							<div class="service-desc">
+								<h4>Рассмотрение</h4>
+								<p>Рассмотрение персонального коммерческого предложения.</p>
+							</div>
+						</div>
+					</div>
+					<!-- .col-md-6 end -->
+					<!--- service block #2 -->
+					<div class="col-xs-12 col-sm-6 col-md-6 service-block">
+						<div class="service-icon">
+							<img src="{% static "images/services/icons/contract.png" %}" alt="icon" width="48"/>
+						</div>
+						<div class="service-content">
+							<div class="service-desc">
+								<h4>Заключение договора</h4>
+								<p>Заключение договора. Согласование сроков оказания услуг.</p>
+							</div>
+						</div>
+					</div>
+					<!-- .col-md-6 end -->
+					<!--- service block #3 -->
+					<div class="col-xs-12 col-sm-6 col-md-6 service-block">
+						<div class="service-icon">
+							<img src="{% static "images/services/icons/search.png" %}" alt="icon" width="48"/>
+						</div>
+						<div class="service-content">
+							<div class="service-desc">
+								<h4>Поиск и отбор персонала</h4>
+								<p>Поиск и отбор персонала. Фактический выход кандидата на работу.</p>
+
+							</div>
+						</div>
+					</div>
+					<!-- .col-md-6 end -->
+					<!--- service block #4 -->
+					<div class="col-xs-12 col-sm-6 col-md-6 service-block">
+						<div class="service-icon">
+							<img src="{% static "images/services/icons/signing.png" %}" alt="icon" width="48" />
+						</div>
+						<div class="service-content">
+							<div class="service-desc">
+								<h4>Подписание акта работ</h4>
+								<p>Подписание акта выполненных работ, расчёт. Действие гарантий на услугу.</p>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- .row end -->
+			</div>
+			<!-- .col-md-6 end -->
+		</div>
+		<!-- .row end -->
+	</div>
+	<!-- .container end -->
+</section>
+
+<!-- Projects Section
+============================================= -->
+<section id="projects" class="projects-fullwidth projects-4col home-3-custom pb-0">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-0">
+				<div class="heading heading-5">
+					<div class="heading-bg heading-right">
+						<p class="mb-0">Выполненные совместно с компаниями</p>
+						<h2>проекты</h2>
+					</div>
+				</div>
+				<!-- .heading end -->
+			</div>
+
+			
+		</div>
+		<!-- .row end -->
+	</div>
+	<!-- .container end -->
+	<div class="container-fluid">
+		<!-- Projects Item
+		============================================= -->
+		<div id="projects-all" class="row">
+			
+			<!-- Project Item #1 -->
+			<div class="col-xs-12 col-sm-6 col-md-3 project-item interior gardening">
+				<div class="project-img">
+					<img class="" src="{% static "images/projects/1.jpg" %}" alt="interior" width="400"/>
+					<div class="project-hover">
+						<div class="project-meta">
+							<h6>Объект "Ковыктинское газоконденсатное месторождение"</h6>
+                            <br>
+							<h5>
+								<a href="#">Обустройство на период ОПР» 3 этап строительства</a>
+							</h5>
+						</div>
+					</div>
+					<!-- .project-hover end -->
+				</div>
+				<!-- .project-img end -->
+				
+			</div>
+			<!-- .project-item end -->
+			
+			<!-- Project Item #2 -->
+			<div class="col-xs-12 col-sm-6 col-md-3 project-item renovation landscaping">
+				<div class="project-img">
+					<img class="" src="{% static "images/projects/3.jpg" %}" alt="interior" width="400"/>
+					<div class="project-hover">
+						<div class="project-meta">
+							<h6>Объект "Ковыктинское газоконденсатное месторождение"</h6>
+                            <br>
+							<h5>
+								<a href="#">Это крупнейшее на Востоке России по запасам газа.</a>
+							</h5>
+						</div>
+					</div>
+					<!-- .project-hover end -->
+				</div>
+				<!-- .project-img end -->
+				
+			</div>
+			<!-- .project-item end -->
+			
+			<!-- Project Item #3 -->
+			<div class="col-xs-12 col-sm-6 col-md-3 project-item interior landscaping">
+				<div class="project-img">
+					<img class="" src="{%  static "images/projects/2.jpg" %}" alt="interior" width="400"/>
+					<div class="project-hover">
+						<div class="project-meta">
+							<h6>Объект "Ковыктинское газоконденсатное месторождение"</h6>
+                            <br>
+							<h5>
+								<a href="#">Является базовым для формирования Иркутского центра газодобычи.</a>
+							</h5>
+						</div>
+					</div>
+					<!-- .project-hover end -->
+				</div>
+				<!-- .project-img end -->
+				
+			</div>
+			<!-- .project-item end -->
+			
+			<!-- Project Item #4 -->
+			<div class="col-xs-12 col-sm-6 col-md-3 project-item architecture">
+				<div class="project-img">
+					<img class="" src="{%  static "images/projects/4.jpg" %}" alt="interior" width="400"/>
+					<div class="project-hover">
+						<div class="project-meta">
+							<h6>Объект "Ковыктинское газоконденсатное месторождение"</h6>
+                            <br>
+							<h5>
+								<a href="#">Ресурсная база для газопровода «Сила Сибири» наряду с Чаяндинским месторождением в Якутии.</a>
+							</h5>
+						</div>
+					</div>
+					<!-- .project-hover end -->
+				</div>
+				<!-- .project-img end -->
+			</div>
+			<!-- .project-item end -->
+
+            <!-- Project Item #5 -->
+			<div class="col-xs-12 col-sm-6 col-md-3 project-item architecture">
+				<div class="project-img">
+					<img class="" src="{%  static "images/projects/5.jpg" %}" alt="interior"  width="400"/>
+					<div class="project-hover">
+						<div class="project-meta">
+							<h6>Объект "Сила Сибири"</h6>
+                            <br>
+							<h5>
+								<a href="#">Магистральный газопровод на востоке России.</a>
+							</h5>
+						</div>
+					</div>
+					<!-- .project-hover end -->
+				</div>
+				<!-- .project-img end -->
+			</div>
+			<!-- .project-item end -->
+
+            <!-- Project Item #6 -->
+			<div class="col-xs-12 col-sm-6 col-md-3 project-item architecture">
+				<div class="project-img">
+					<img class="" src="{%  static "images/projects/6.jpg" %}" alt="interior" width="400"/>
+					<div class="project-hover">
+						<div class="project-meta">
+							<h6>Объект "Сила Сибири"</h6>
+                            <br>
+							<h5>
+								<a href="#">Проходит по территории Республики Саха (Якутия), Иркутской и Амурской областей.</a>
+							</h5>
+						</div>
+					</div>
+					<!-- .project-hover end -->
+				</div>
+				<!-- .project-img end -->
+			</div>
+			<!-- .project-item end -->
+
+            <!-- Project Item #7 -->
+			<div class="col-xs-12 col-sm-6 col-md-3 project-item architecture">
+				<div class="project-img">
+					<img class="" src="{%  static "images/projects/7.jpg" %}" alt="interior" width="400"/>
+					<div class="project-hover">
+						<div class="project-meta">
+							<h6>Объект "Сила Сибири"</h6>
+                            <br>
+							<h5>
+								<a href="#">Газопровод проходит до Благовещенска, находящегося на границе с Китаем.</a>
+							</h5>
+						</div>
+					</div>
+					<!-- .project-hover end -->
+				</div>
+				<!-- .project-img end -->
+			</div>
+			<!-- .project-item end -->
+
+            <!-- Project Item #8 -->
+			<div class="col-xs-12 col-sm-6 col-md-3 project-item architecture">
+				<div class="project-img">
+					<img class="" src="{%  static "images/projects/8.jpg" %}" alt="interior" width="400"/>
+					<div class="project-hover">
+						<div class="project-meta">
+							<h6>Объект "Сила Сибири"</h6>
+                            <br>
+							<h5>
+								<a href="#">Трубопровод транспортирует газ из двух месторождений — Чаяндинского и Ковыктинского.</a>
+							</h5>
+						</div>
+					</div>
+					<!-- .project-hover end -->
+				</div>
+				<!-- .project-img end -->
+			</div>
+			<!-- .project-item end -->
+
+            <!-- Project Item #9 -->
+			<div class="col-xs-12 col-sm-6 col-md-6 col-md-offset-3 project-item architecture">
+				<div class="project-img">
+					<img class="" src="{%  static "images/projects/9.jpg" %}" alt="interior" width="100%"/>
+					<div class="project-hover">
+						<div class="project-meta">
+							<h6>«Реконструкция УКПГ на Ново-Уренгойском лицензионном участке с конденсатопроводом и газопроводом внешнего транспорта».</h6>
+                            <br>
+							<h5>
+								<a href="#">г. Новый Уренгой, ЯНАО 2014-2015 г; <br> Заказчик: АО «РОСПАН ИНТЕРНЕШНЛ» ПАО «НК «Роснефть».</a>
+							</h5>
+						</div>
+					</div>
+					<!-- .project-hover end -->
+				</div>
+				<!-- .project-img end -->
+			</div>
+			<!-- .project-item end -->
+    		</div>
+		<!-- .row end -->
+	</div>
+	<!-- .container end -->
+</section>
+
+<!-- Shortcode #6 
+============================================= -->
+<section id="shortcode-6" class="shortcode-6 text-center-xs">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 mb-0-sm">
+				<div class="heading heading-4">
+					<div class="heading-bg heading-right">
+						<p class="mb-0">Отечественное доверие!</p>
+						<h2>Сертификаты</h2>
+					</div>
+				</div>
+				<!-- .heading end -->
+			</div>
+			<!-- .col-md-12 end -->
+		</div>
+		<!-- .row end -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-6">
+				<p>Мы уделяем особое внимание качеству наших услуг, обеспечивая
+                    индивидуальный подход к клиенту, уделяя внимание мелочам и внимательно
+                    анализируя суть задачи. Мы требовательны к себе, стремясь к высокому
+                    профессионализму в работе для достижения максимальной эффективности.</p>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-2 text-center-sm mb-30-sm">
+				<div class="feature feature-2 feature-bordered">
+					<div class="feature-icon">
+						<i class="lnr lnr-license font-40 color-theme"></i>
+					</div>
+					<h4 class="text-uppercase font-16">Безопасность</h4>
+				</div>
+			</div>
+			<!-- .col-md-6 end -->
+			<div class="col-xs-12 col-sm-6 col-md-2 text-center-sm mb-30-sm">
+				<div class="feature feature-2 feature-bordered">
+					<div class="feature-icon">
+						<i class="lnr lnr-users font-40 color-theme"></i>
+					</div>
+					<h4 class="text-uppercase font-16">Сообщество</h4>
+				</div>
+			</div>
+			<!-- .col-md-6 end -->
+			<div class="col-xs-12 col-sm-6 col-md-2 text-center-sm mb-30-sm">
+				<div class="feature feature-2 feature-bordered">
+					<div class="feature-icon">
+						<i class="lnr lnr-cloud-sync font-40 color-theme"></i>
+					</div>
+					<h4 class="text-uppercase font-16">Устойчивость</h4>
+				</div>
+			</div>
+
+		</div>
+		<!-- .row end -->
+
+        <div class="row" style="padding-top: 30px">
+            <!-- Sertificate Item #1 -->
+			<div class="col-xs-12 col-sm-6 col-md-4 project-item text-center">
+					<img class="rounded" src="{% static "images/sertificates/sert2.jpg" %}" alt="сертификат развитие" height="180"/>
+			</div>
+			<!-- .Sertificate-item end -->
+
+            <!-- Sertificate Item #1 -->
+			<div class="col-xs-12 col-sm-6 col-md-4 project-item text-center">
+					<img class="rounded" src="{% static "images/sertificates/bl1.jpg" %}" alt="благодарность развитие" height="180"/>
+			</div>
+			<!-- .Sertificate-item end -->
+
+            <!-- Sertificate Item #1 -->
+			<div class="col-xs-12 col-sm-6 col-md-4 project-item text-center">
+
+					<img class="rounded" src="{% static "images/sertificates/bl2.jpg" %}" alt="благодарность развитие" height="180"/>
+
+				<!-- .sertif-img end -->
+			</div>
+			<!-- .Sertificate-item end -->
+        </div>
+
+        <div class="row">
+            <!-- Sertificate Item #4 -->
+            <div class="col-md-4 col-md-offset-4 text-center" style="">
+                    <img class="rounded" src="{% static "images/sertificates/sert1.jpg" %}" alt="сертификат развитие" height="180px"/>
+                <!-- .sertif-img end -->
+            </div>
+            <!-- .Sertificate-item end -->
+        </div>
+	</div>
+	<!-- .container end -->
+</section>
+
+<!-- Shortcode #7 
+============================================= -->
+<section id="shortcode-7" class="shortcode-7 section-img bg-gray">
+	<div class="container-fluid">
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-5 col-img">
+                <!---<div class="col-divider">
+				</div> --->
+
+				<div class="col-bg">
+					<img src="{% static "images/features/1.jpg" %}" alt="Background"/>
+				</div>
+                <div class="heading heading-4">
+					<div class="heading-bg heading-right principles">
+						<p class="mb-0" style="color: white">Чего мы придерживаемся ?</p>
+						<h2>Наши принципы</h2>
+					</div>
+				</div>
+				<!-- .heading end -->
+
+			</div>
+			<!-- .col-md-4 end -->
+			<div class="col-xs-12 cpl-sm-12 col-md-3 bg-theme col-heading">
+				<h6>1. <strong> Качество.</strong> Мы уделяем особое внимание качеству наших услуг, обеспечивая индивидуальный подход к клиенту, уделяя внимание мелочам и внимательно анализируя суть задачи. Мы требовательны к себе, стремясь к высокому и большому профессионализму в работе для достижения максимальной эффективности.
+                    <br>2. <strong> Результативность. </strong> Предоставление качественного результата в максимально сжатые сроки.
+                    <br>3. <strong> Партнерство. </strong> Достижение наилучшего результата возможно только в ходе совместной работы, основанной на взаимодействии с клиентом, взаимном обмене информацией, добропорядочности и доверии отношений.
+                    <br>4. <strong> Этичность. </strong> Обязательное условие нашей работы - соблюдение этических стандартов и норм деловой этики. Мы не предлагаем к рассмотрению кандидатам, работающим в компаниях клиентов, вакансии наших клиентов.
+                </h6>
+            </div>
+			<!-- .col-md-4 end -->
+			<div class="col-xs-12 col-sm-12 col-md-4 col-progress">
+				<!-- progress 1 -->
+				<div class="progressbar">
+					<div class="progress-title">
+						<span class="title">Качество</span>
+						<span class="value">95%</span>
+					</div>
+					<div class="progress">
+						<div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">
+						</div>
+					</div>
+				</div>
+				<!-- .progressbar end -->
+
+                <!-- progress 2 -->
+				<div class="progressbar">
+					<div class="progress-title">
+						<span class="title">Результативность</span>
+						<span class="value">86%</span>
+					</div>
+					<div class="progress">
+						<div class="progress-bar" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100" style="width: 86%;">
+						</div>
+					</div>
+				</div>
+				<!-- .progressbar end -->
+				
+				<!-- progress 3 -->
+				<div class="progressbar">
+					<div class="progress-title">
+						<span class="title">Партнерство</span>
+						<span class="value">82%</span>
+					</div>
+					<div class="progress">
+						<div class="progress-bar" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100" style="width: 82%;">
+						</div>
+					</div>
+				</div>
+				<!-- .progressbar end -->
+				
+				<!-- progress 4 -->
+				<div class="progressbar">
+					<div class="progress-title">
+						<span class="title">Этичность</span>
+						<span class="value">75%</span>
+					</div>
+					<div class="progress">
+						<div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
+						</div>
+					</div>
+				</div>
+				<!-- .progressbar end -->
+				
+
+
+				
+			</div>
+			<!-- .col-md-4 end -->
+		</div>
+	</div>
+</section>
+
+<section id="testimonials" class="testimonial testimonial-1 bg-gray">
+	<div class="container">
+        <div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 mb-0-sm">
+				<div class="heading heading-4">
+					<div class="heading-bg heading-right">
+						<p class="mb-0">Что говорят о нас клиенты?</p>
+						<h2>Отзывы</h2>
+					</div>
+				</div>
+				<!-- .heading end -->
+			</div>
+			<!-- .col-md-12 end -->
+		</div>
+		<!-- .row end -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12">
+				<div id="testimonial-oc" class="testimonial-carousel">
+
+					<div class="testimonial-item">
+						<div class="testimonial-content">
+							<div class="testimonial-img">
+                                <i class="fas fa-quote-left"></i>
+								<img src="{% static "images/testimonial/review_photo-1.jpg" %}" alt="author" width="50"/>
+							</div>
+                            <div class="scrollbar text-content" id="style-3">
+                                <div class="force-overflow">
+                                    <p>Агентство отличное!
+                                        Долго искал работу и потом двоюродный брат дал мне контакты этого агентства.
+                                        Я сразу же связался с ними и мне предложили несколько вариантов.
+                                        Я выбрал объект, который находится в Якутии. До сих пор там работаю и всем доволен! </p>
+                                </div>
+                            </div>
+						</div>
+						<div class="testimonial-divider">
+						</div>
+						<div class="testimonial-meta">
+							<h6><strong>Ибиев Ильяс Алимгериевич</strong>, Монтажник стальных и железобетонных конструкций 5-го разряда</h6>
+						</div>
+					</div>
+
+					<div class="testimonial-item">
+						<div class="testimonial-content">
+							<div class="testimonial-img">
+								<i class="fas fa-quote-left"></i>
+								<img src="{% static "images/testimonial/review_photo-2.jpg" %}" alt="author" width="50"/>
+							</div>
+                            <div class="scrollbar text-content" id="style-3">
+                                <div class="force-overflow">
+                                    <p>В июле 2018 года я обратился в агентство и мне помогли трудоустроиться стропальщиком.
+                                Также в агенстве подсказали, что для карьерного роста мне нужно будет поступить в технический вуз.
+                                В сентябре 2018 года я поступил в кубанской государственный технологический институт, на курсы по переподготовке, факультета «нефтегазовое дело». В феврале 2019 года получил диплом.
+                                В марте 2019 года перевёлся на должность монтажника стальных и ж/б конструкций 4-го разряда, а в августе 2019 перевёлся в Произведственный Технический Отдел на должность техник ПТО.
+                                Диплом КубГТУ сыграл своё😊
+                                В январе 2020 повысили и стал инженером 2-ой категории ПТО, а в августе 2020 года снова повысили ещё раз и стал инженером 1 категории ПТО.
+                                Это мой путь из стропальщика до инженера ПТО. </p>
+                                </div>
+
+                            </div>
+
+						</div>
+						<div class="testimonial-divider">
+						</div>
+						<div class="testimonial-meta">
+							<h6><strong>Фоменко Александр Александрович</strong>, <br>Инженер 1-ой категории ПТО</h6>
+						</div>
+					</div>
+
+                     <div class="testimonial-item">
+						<div class="testimonial-content">
+							<div class="testimonial-img">
+								<i class="fas fa-quote-left"></i>
+								<img src="{% static "images/testimonial/review_photo-4.jpg" %}" alt="author" width="50"/>
+							</div>
+							<p>Устроился на работу летом 2020 года. Очень благодарен данному агентству.
+                                Помогали и подсказывали на всех этапах трудоустройства.
+                                Сотрудники профессионалы своего дела👍. Всем рекомендую.</p>
+						</div>
+						<div class="testimonial-divider">
+						</div>
+						<div class="testimonial-meta">
+							<h6><strong>Шевченко Валерий Евгеньевич</strong>, <br> Сварщик 5-го разряда.
+                            Работает на объекте: «ЛПУМГ № 3 г. Нерюнгри Якутия»</h6>
+						</div>
+					</div>
+
+					<div class="testimonial-item">
+						<div class="testimonial-content">
+							<div class="testimonial-img">
+								<i class="fas fa-quote-left"></i>
+								<img src="{% static "images/testimonial/review_photo-5.jpg" %}" alt="author" width="50"/>
+							</div>
+							<p>Работаю на одном из строительных объектов, расположенных на острове Сахалин. Очень доволен компанией НГКМ.
+                                И благодарен агентству  "Развитие"! Отлично выполнили свою работу! Всем рекомендую.</p>
+						</div>
+						<div class="testimonial-divider">
+						</div>
+						<div class="testimonial-meta">
+							<h6><strong>Гандалоев Ибрагим Хасанович</strong>, Монтажник стальных и железобетонных конструкций 4-го разряда</h6>
+						</div>
+					</div>
+
+					<div class="testimonial-item">
+						<div class="testimonial-content" >
+							<div class="testimonial-img">
+								<i class="fas fa-quote-left"></i>
+								<img src="{% static "images/testimonial/3.png" %}" alt="author"/>
+							</div>
+                            <div class="scrollbar text-content" id="style-3">
+                                <div class="force-overflow">
+                                    <p>В декабре 2019 года я обратился в данное агентство, так как долгое время был без работы.
+                                Сотрудники агентства сопровождали во всём с первого дня как подал документы до уезда на вахту! И всегда были на связи. За что им огромное спасибо!
+                                Очень доволен и самой работой и зарплатой в этой компании.</p>
+                                </div>
+                            </div>
+						</div>
+						<div class="testimonial-divider">
+						</div>
+						<div class="testimonial-meta">
+								<h6>
+                                    <strong>Никитин Алексей Андреевич</strong>, Монтажник стальных и железобетонных конструкций 4-го разряда
+                                </h6>
+
+						</div>
+					</div>
+
+                    {% for review in reviews %}
+                        {% if review.active %}
+                            <div class="testimonial-item">
+						<div class="testimonial-content" >
+							<div class="testimonial-img">
+								<i class="fas fa-quote-left"></i>
+                                {% if review.image %}
+								    <img src="{{review.image.url}}"  width="50px" alt="author"/>
+                                {% endif %}
+							</div>
+                            <div class="scrollbar text-content" id="style-3">
+                                <div class="force-overflow">
+                                    <p>{{ review.body }}</p>
+                                </div>
+                            </div>
+						</div>
+						<div class="testimonial-divider">
+						</div>
+						<div class="testimonial-meta">
+								<h6>
+                                    <strong>{{ review.name }}</strong>, {{ review.qualification }} - {{ review.organization }}
+                                </h6>
+
+						</div>
+					</div>
+                        {% endif %}
+                    {% endfor %}
+
+				</div>
+			</div>
+		</div>
+        <!-- .row end -->
+        <div class="row center" style="margin-top:30px">
+
+            <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#model-quote5" id="modelquote5">Добавить отзыв</a>
+
+				<!-- Modal -->
+				<div class="modal fade model-quote" id="model-quote5" tabindex="-1" role="dialog" aria-labelledby="modelquote5">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+								</button>
+								<div class="model-icon">
+									<i class="lnr lnr-apartment"></i>
+								</div>
+								<div class="model-divider">
+									<div class="model-title">
+										<p>Что вы думаете о нас?</p>
+										<h6>Ваш отзыв!</h6>
+									</div>
+								</div>
+							</div>
+							<!-- .model-header end -->
+							<div class="modal-body">
+								<form id="head-quote-form image-form" action="{% url 'review' %}" method="POST" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <input type="text" pattern='^[A-Za-zА-Яа-яЁё".,?!:;()-_\s]*$' class="form-control" name="name" id="quote-name" placeholder="ФИО:" required/>
+                                    <input type="text" pattern='^[A-Za-zА-Яа-яЁё".,?!:;()-_\s]*$' class="form-control" name="qualify" id="quote-qualify" placeholder="Специальность:" />
+                                    <input type="text" pattern='^[A-Za-zА-Яа-яЁё".,?!:;()-_\s]*$' class="form-control" name="organization" id="quote-organization" placeholder="Организация(место работы):" required/>
+                                    <textarea class="form-control" pattern='^[A-Za-zА-Яа-яЁё".,?!:;()-_\s]*$' name="review"  id="quote-message" placeholder="Опишите подробно ваш отзыв:" rows="4" required></textarea>
+                                    <br>
+
+                                    <!-- Image load
+                                    <label for="quote-image">При желании прикрепите фото:</label>
+                                    <input content="type" type="file" name="image" class="form-control" id="id_file">
+                                     Wrap the image or canvas element with a block element (Image cropper)
+                                    <div id="alert-box"></div>
+                                    <div id="image-box" class="mb-3"></div> -->
+                                    <button id="confirm-btn" type="submit" class="btn btn-primary btn-black btn-block">Отправить</button>
+								</form>
+							</div>
+							<!-- .model-body end -->
+						</div>
+					</div>
+				</div>
+				<!-- .model-quote end -->
+
+        </div>
+        <!-- .row end -->
+		
+	</div>
+	
+</section>
+
+
+
+<!-- Call To Action #6
+============================================= -->
+<section id="cta-6" class="bg-overlay bg-overlay-dark cta cta-6">
+	<div class="bg-section" >
+		<img src="{%  static "images/services/1.jpg" %}" alt="Background"/>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-7">
+				<p class="text-capitalize mb-0 color-white">Мы вам поможем!</p>
+				<h2 class="mb-xs color-white">Ищете работу в сфере строительства или редких специалистов?</h2>
+				<a class="btn btn-secondary btn-white" href="#" data-toggle="modal" data-target="#model-quote2" id="modelquote4">Оставьте заявку</a>
+				
+				<!-- Modal -->
+				<div class="modal fade model-quote" id="model-quote2" tabindex="-1" role="dialog" aria-labelledby="modelquote4">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+								</button>
+								<div class="model-icon">
+									<i class="lnr lnr-apartment"></i>
+								</div>
+								<div class="model-divider">
+									<div class="model-title">
+										<p>Мы вам поможем</p>
+										<h6>Оставьте заявку!</h6>
+									</div>
+								</div>
+							</div>
+							<!-- .model-header end -->
+							<div class="modal-body">
+								<form id="head-quote-form" action="{% url 'email' %}" method="POST">
+                                    {% csrf_token %}
+                                            <input type="text" pattern='^[A-Za-zА-Яа-яЁё".,?!:;()-_\s]*$' class="form-control" name="name" id="quote-name" placeholder="ФИО:" required/>
+                                            <input type="email" class="form-control" name="email" id="quote-email" placeholder="Email:" required/>
+                                            <input type="tel" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"  class="form-control" name="phone" id="quote-telephone" placeholder="Номер телефона: +7(9xx)xxx-xx-xx" required/>
+                                            <input type="text" pattern='^[A-Za-zА-Яа-яЁё".,?!:;()-_\s]*$' class="form-control mb-30" name="subject" id="subject" placeholder='Тема: "Ищу работу/сотрудника"' required/>
+                                            <textarea class="form-control" pattern='^[A-Za-zА-Яа-яЁё".,?!:;()-_\s]*$' name="message"  id="quote-message" placeholder="Ваше сообщение:" rows="2" required></textarea>
+                                            <button type="submit" class="btn btn-primary btn-black btn-block">Отправить</button>
+								</form>
+							</div>
+							<!-- .model-body end -->
+						</div>
+					</div>
+				</div>
+				<!-- .model-quote end -->
+			</div>
+			<!-- .col-md-8 end -->
+			<div class="col-md-5 hidden-xs hidden-sm">
+				<div class="cta-img">
+					<img src="{% static "images/services/truck.png" %}" alt="call to action"/>
+				</div>
+			</div>
+		</div>
+		<!-- .row end -->
+	</div>
+	<!-- .container end -->
+</section>
+<!-- #cta-6 end -->
+
+<!-- Contact #1
+============================================= -->
+<section id="contact" class="contact">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12">
+				<div class="heading heading-4">
+					<div class="heading-bg heading-right">
+						<p class="mb-0">Мы всегда вас ждём!</p>
+						<h2>Наши контакты</h2>
+					</div>
+				</div>
+				<!-- .heading end -->
+			</div>
+			<!-- .col-md-12 end -->
+			<div class="col-xs-12 col-sm-12 col-md-12">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-4 widgets-contact mb-60-xs">
+						<div class="widget">
+							<div class="widget-contact-icon pull-left">
+								<i class="lnr lnr-map"></i>
+							</div>
+							<div class="widget-contact-info">
+								<p class="text-capitalize">Приходите к нам</p>
+								<p class="text-capitalize font-heading">
+                                    <a class="call-anchor" href="https://goo.gl/maps/jNeEppYMDoz3mLaQ9" target="_blank">
+                                        Краснодарский край, Краснодар
+                                        <span class="label label-default tooltiptext" style="margin-left: -180px;width:98px">Открыть карты</span>
+                                    </a>
+                                    </p>
+							</div>
+						</div>
+						<!-- .widget end -->
+						<div class="clearfix">
+						</div>
+						<div class="widget">
+							<div class="widget-contact-icon pull-left">
+								<i class="lnr lnr-envelope"></i>
+							</div>
+							<div class="widget-contact-info">
+								<p class="text-capitalize ">Напишите нам</p>
+								<p class="text-capitalize font-heading">
+                                    <a class="call-anchor" href="mailto:razvitiye23@mail.ru" target="_blank">razvitiye23@mail.ru
+                                        <span class="label label-default tooltiptext" style=""> Написать</span></a></p>
+							</div>
+						</div>
+						<!-- .widget end -->
+						<div class="clearfix">
+						</div>
+						<div class="widget">
+							<div class="widget-contact-icon pull-left">
+								<i class="lnr lnr-phone"></i>
+							</div>
+							<div class="widget-contact-info">
+								<p class="text-capitalize">Повоните нам</p>
+								<p class="text-capitalize font-heading phone-number " >
+                                    <a class="call-anchor" href="tel:+79184400032">+7 (918) 440-00-32
+                                <span class="label label-default tooltiptext" style=""> Позвонить</span></a> </p>
+
+							</div>
+						</div>
+						<!-- .widget end -->
+					</div>
+					<!-- .col-md-4 end -->
+					<div class="col-xs-12 col-sm-12 col-md-8">
+						<div class="row">
+							<form id="contact-form" action="{% url 'email' %}" method="POST">
+                                {% csrf_token %}
+                                    <div class="col-md-6">
+                                        <input type="text" pattern='^[A-Za-zА-Яа-яЁё".,?!:;()-_\s]*$' class="form-control mb-30" name="name" id="name" placeholder="Ваше имя" required/>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="email" class="form-control mb-30" name="email" id="email" placeholder="Ваш Email" required/>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="tel" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" class="form-control mb-30" name="phone" id="telephone" placeholder="Номер телефона" required/>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" pattern='^[A-Za-zА-Яа-яЁё".,?!:;()-_\s]*$' class="form-control mb-30" name="subject" id="subject" placeholder="Тема" required/>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="" id="style-3">
+                                            <textarea pattern='^[A-Za-zА-Яа-яЁё".,?!:;()-_\s]*$' class="form-control mb-30 scrollbar" name="message" id="message style-3" rows="2" placeholder="Ваше сообщение" required></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button type="submit" id="submit-message" class="btn btn-primary btn-black btn-block">Отправить</button>
+                                    </div>
+							</form>
+						</div>
+					</div>
+					<!-- .col-md-8 end -->
+				</div>
+				<!-- .row end -->
+			</div>
+			<!-- .col-md-12 end -->
+		</div>
+		<!-- .row end -->
+	</div>
+	<!-- .container end -->
+</section>
+
+<!-- Footer #5
+============================================= -->
+<footer id="footer" class="footer-5">
+	<!-- Social bar
+	============================================= -->
+	<div class="widget-social">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-offset-4 col-md-4 mb-30-sm">
+					<div class="widget-social-info pull-left text-capitalize pull-none-xs mb-15-xs">
+						<p class="mb-0">Следите за нами<br>
+							в социальных сетях</p>
+					</div>
+					<div class="widget-social-icon pull-right text-right pull-none-xs">
+						<a href="https://instagram.com/razvitiye23?igshid=lmzh6v3qjcfa" target="_blank">
+                            <i class="fab fa-instagram"></i> <i class="fab fa-instagram"></i></a>
+						<a href="https://wa.link/6ypiq2" target="_blank"> <i class="fab fa-whatsapp" ></i> <i class="fab fa-whatsapp"></i></a>
+						<a href="https://xn--r1a.click/razvitiye23" target="_blank"><i class="fab fa-telegram"></i> <i class="fab fa-telegram"></i></a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- Copyrights
+	============================================= -->
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 copyrights text-center">
+				<p class="text-capitalize">© 2016 - 2020 Кадровое агентство РАЗВИТИЕ. все права защищены</p>
+				<p class="text-capitalize" style="font-size: 10px">Разработано
+					<a href="https://instagram.com/gu.m.i?igshid=1a4dzpnlsgqfu" target="_blank">GUMI</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<!-- Footer Scripts
+============================================= -->
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="{% static "js/jquery-cropper.js" %}"></script>
+
+<script src="{% static "js/plugins.js" %}"></script>
+<script src="{% static "js/functions.js" %}"></script>
+<script src="{% static "js/main.js" %}"></script>
+
+
+<script type="text/javascript" src="{% static "js/extensions/jquery.tools.min.js" %}"></script>
+<script type="text/javascript" src="{% static "js/extensions/jquery.revolution.min.js" %}"></script>
+<script type="text/javascript" src="{% static "js/extensions/video.js" %}"></script>
+<script type="text/javascript" src="{% static "js/extensions/slideanims.js" %}"></script>
+<script type="text/javascript" src="{% static "js/extensions/actions.js" %}"></script>
+<script type="text/javascript" src="{% static "js/extensions/layeranimation.js" %}"></script>
+<script type="text/javascript" src="{% static "js/extensions/kenburn.js" %}"></script>
+<script type="text/javascript" src="{% static "js/extensions/navigation.js" %}"></script>
+<script type="text/javascript" src="{% static "js/extensions/migration.js" %}"></script>
+<script type="text/javascript" src="{% static "js/extensions/parallax.js" %}"></script>
+
+<script type="text/javascript">
+jQuery(document).ready(function() {
+   jQuery("#slider1").revolution({
+      sliderType:"standard",
+      sliderLayout:"auto",
+      delay:6000,
+	  disableProgressBar:"on",
+	  spinner:"off",
+      navigation: {
+		keyboardNavigation:"off",
+		keyboard_direction: "horizontal",
+		mouseScrollNavigation:"off",
+		onHoverStop:"off",
+		arrows: {
+			enable:false,
+		},
+		bullets:{
+         style:"slider-bullet",
+         enable:true,
+         hide_onmobile:false,
+         hide_onleave:false,
+         hide_delay:200,
+         hide_delay_mobile:1200,
+         hide_under:0,
+         hide_over:9999,
+         tmp:'<span></span>', 
+         direction:"horizontal",
+         space:5,       
+         h_align:"center",
+         v_align:"center",
+         h_offset:0,
+         v_offset:280
+        },
+	}, 
+      gridwidth:1230,
+      gridheight:700 ,
+	  
+    }); 
+});
+
+
+
+</script>
+</body>
+</html>

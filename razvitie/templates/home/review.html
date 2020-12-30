@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/external.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" >
+
+    <title>Отправка сообщения</title>
+
+    <link rel="icon" href="{% static "images/favicon/favicon.ico" %}" type="image/ico" />
+    <link rel="shortcut icon" href="{% static "images/favicon/favicon.ico" %}" type="image/ico" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-xs-12 col-sm-12 col-md-12 mt-xs">
+            <div id="contact-result">
+                {% if sended %}
+                    <h1>Ваше отзыв отправлен!</h1>
+                    <hr>
+                    <h4>После проверки модератора, мы обязательно выставим ваш отзыв на нашем сайте.</h4>
+                    <br>
+                    <p>Благодарим за уделенное время!</p>
+                    <hr>
+
+                {% else %}
+                    <h1>Ваш отзыв не отправлен!</h1>
+                    <h4>Попробуйте снова заполнить форму.</h4>
+                {% endif %}
+            </div>
+        <div style="margin-top: 80px">
+            <a class="btn btn-secondary mb-30-xs btn-primary btn-black btn-block " style="padding-top: 12px" href="{% url 'index' %}">Вернуться на сайт</a>
+        </div>
+
+        </div>
+    </div>
+</body>
+</html>
